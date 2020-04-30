@@ -1,0 +1,60 @@
+// take 2 seconds
+
+#include<iostream>
+// using namespace std; 
+
+int main(){
+	int A,k;
+	std::cin>>A>>k;
+	int arr[A];
+	for(int i=0;i<A;i++){
+		std::cin>>arr[i];
+
+	}
+	for(int i=0;i<A-1;i++){
+		for(int j=i+1;j<A;j++){
+			if(arr[i]+arr[j]==k){
+				std::cout<<"YES";
+				return 0;
+			}
+		}
+	}
+
+	std::cout<<"NO";
+	return 0;
+}
+
+---------------------------------------------------------------------------------------------------------------
+// takes 1 sec only
+#include<iostream>
+#include<bits/stdc++.h>
+#include<string>
+#include<stdlib.h>
+using namespace std;
+int main()
+{
+ long n,k,i,te,l;
+ cin>>n>>k;
+ long a[n];
+    for(i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    sort(a,a+n);
+    i=n-1;
+    while(k>=0)
+    {
+        if(k==0)
+        {
+            cout<<"YES"<<endl;
+            exit(0);
+        }
+        k-=a[i];
+        i--;
+        if(i<0)
+        {
+            break;
+        }
+    }
+    cout<<"NO"<<endl;
+}
