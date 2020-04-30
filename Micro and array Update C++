@@ -1,0 +1,25 @@
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main(){
+	int T,N,K,mn,i;
+	scanf("%d",&T);
+	while(T--){
+		scanf("%d %d",&N,&K);
+		mn=INT_MAX;
+		while(N--){
+			scanf("%d",&i);
+			mn=min(mn,i);
+		}
+		
+		cout<<max(0,K-mn)<<endl;
+	}
+
+	return 0;
+}
+------------------------------------------------------------------------------------------------------------
+
+
