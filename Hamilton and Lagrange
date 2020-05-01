@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+	unsigned int N,i,j;
+	scanf("%u",&N);j=N;
+	int arr[N];
+	while(N--){
+		scanf("%d",&arr[N]);
+	}
+
+	int mn = INT_MIN;
+	for(i=0;i<j;i++){
+		if(arr[i]>=mn){mn=arr[i];}
+		else{arr[i]=-1;}
+	}
+	//sort(arr,arr+j,greater<int>());
+	
+	while(j--){
+		if(arr[j]!=-1){
+			printf("%d ",arr[j]);
+		}
+	}
+	return 0;
+}
+-------------------------------------------------------------------------
