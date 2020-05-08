@@ -1,0 +1,54 @@
+/*  PARTIALLY ACCEPTED  */
+
+
+#include <bits/stdc++.h>
+
+int main() {
+	int n,q,i=0;
+	scanf("%d %d",&n,&q);
+    int a[n];
+//cout << "Input number is " << num << endl;		// Writing output to STDOUT
+    while(i<n){
+        scanf("%d",&a[i]);
+        i++;
+    }
+    int start,end,count;
+    char dir;
+    while(q--){
+        scanf("%d %d %c",&start,&end,&dir);
+        if(a[start]==end){printf("0\n");continue;}
+        if(dir == 'R'){
+            count=0;
+            for(i=start;i<n+start;i++){
+            if(i<n){
+                if(a[i]==end){printf("%d\n",count);break;}
+                else{count++;}
+            }
+            else{
+                if(a[i-n]==end){printf("%d\n",count);break;}
+                else{count++;}
+            }      
+        }
+        if(count>=n){printf("-1\n");}
+        
+        }
+        else{
+            count=0;
+            for(i=start;i>start-n;i--){
+                if(i>=0){
+                    if(a[i]==end){printf("%d\n",count);break;}
+                    else{count++;}
+                }
+                else{
+                    if(a[n+i]==end){printf("%d\n",count);break;}
+                    else{count++;}
+                }
+            }
+            if(count>=n){printf("-1\n");}
+            
+        }
+        
+    }
+    
+    return 0;
+}
